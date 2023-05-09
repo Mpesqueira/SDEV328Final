@@ -22,5 +22,10 @@ $F3->route('GET /', function () {
     echo $view->render('views/home.html');
 });
 
+$F3->route('GET /contact-us', function () {
+   $view = new Template();
+   echo $view->render('views/contact.html');
+});
+
 // Run Fat-Free
 $F3->run();
