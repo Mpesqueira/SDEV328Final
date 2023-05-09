@@ -27,5 +27,6 @@ $F3->route('GET /contact-us', function () {
    echo $view->render('views/contact.html');
 });
 
+
 // Run Fat-Free
 $F3->run();
