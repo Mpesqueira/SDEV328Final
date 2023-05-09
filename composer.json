@@ -1,0 +1,16 @@
+{
+  "name": "SDEV328Final",
+  "authors": [
+    {
+      "name": "Charlie Tang",
+      "email": "tang.charlie@student.greenriver.edu"
+    },
+    {
+      "name": "Mark Pesqueira",
+      "email": "presqueira.mark@student.greenriver.edu"
+    }
+  ],
+  "require": {
+    "bcosca/fatfree-core": "dev-master"
+  }
+}
