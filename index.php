@@ -1,9 +1,9 @@
 <?php
 /*
- * Charlie Tang
- * 4/18/2023
- * 328/diner/index.php
- * Controller for diner project
+ * Charlie Tang, Mark Pesqueira
+ * 5/9/2023
+ * 328/SDEV328Final/index.php
+ * Controller for Final Project
  */
 
 // Turn on error reporting
