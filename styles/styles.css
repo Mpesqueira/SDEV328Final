@@ -1,10 +1,12 @@
 body {
     text-align: center;
-    background-color: #731414;
+    background-color: #1e0000;
 }
 section {
     width: 766px;
-    margin-left: 250px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 html * {
@@ -14,4 +16,19 @@ html * {
 
 ul {
     list-style-position: inside;
+    padding-left: 0;
+    text-align: center;
+}
+
+input[type="text"] {
+    margin-top: 20px;
+    border-radius: 10px;
+    height: 50px;
+    width: 300px;
+    color: black;
+    font-size: 16px;
+}
+
+.login-page {
+    background-color: #83020b;
 }
