@@ -20,7 +20,7 @@ ul {
     text-align: center;
 }
 
-input[type="text"] {
+input[type="text"], button {
     margin-top: 20px;
     border-radius: 10px;
     height: 50px;
@@ -31,4 +31,8 @@ input[type="text"] {
 
 .login-page {
     background-color: #83020b;
+    width: 500px;
+    margin-top:200px;
+    padding: 20px 20px 50px 20px;
+    border-radius: 10px;
 }
