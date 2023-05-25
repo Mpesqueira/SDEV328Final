@@ -27,9 +27,9 @@ $F3->route('GET /contact-us', function () {
    echo $view->render('views/contact.html');
 });
 
-$F3->route('GET /menu', function () {
+$F3->route('GET /rice', function () {
     $view = new Template();
-    echo $view->render('views/menu.html');
+    echo $view->render('views/rice.html');
 });
 
 $F3->route('GET /login', function () {
