@@ -37,5 +37,10 @@ $F3->route('GET /login', function () {
     echo $view->render('views/login.html');
 });
 
+$F3->route('GET /signup', function () {
+    $view = new Template();
+    echo $view->render('views/signup.html');
+});
+
 // Run Fat-Free
 $F3->run();
