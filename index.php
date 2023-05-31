@@ -10,6 +10,7 @@
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
 
+// Require the autoload file
 require_once('vendor/autoload.php');
 
 // create an F3 (Fat-Free Framework) object
@@ -17,27 +18,40 @@ $F3 = Base::instance();
 
 // Define a default route
 $F3->route('GET /', function () {
+
     // Display a view page
     $view = new Template();
     echo $view->render('views/home.html');
 });
 
+// Define a contact us route
 $F3->route('GET /contact-us', function () {
-   $view = new Template();
+
+    // Display a view page
+    $view = new Template();
    echo $view->render('views/contact.html');
 });
 
-$F3->route('GET /rice', function () {
+// Define a rice menu route
+$F3->route('GET|POST /rice', function ($f3) {
+
+    // Display a view page
     $view = new Template();
     echo $view->render('views/rice.html');
 });
 
+// Define a login route
 $F3->route('GET /login', function () {
+
+    // Display a view page
     $view = new Template();
     echo $view->render('views/login.html');
 });
 
+// Define a signup route
 $F3->route('GET /signup', function () {
+
+    // Display a view page
     $view = new Template();
     echo $view->render('views/signup.html');
 });
