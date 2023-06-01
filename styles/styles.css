@@ -1,6 +1,6 @@
 body {
     text-align: center;
-    background-color: #1e0000;
+    background-color: #EEF5DB;
 }
 section {
     width: 766px;
@@ -10,7 +10,7 @@ section {
 }
 
 html * {
-    color: white;
+    color: black;
     font-family: Book Antiqua,Palatino,Palatino Linotype,Palatino LT STD,Georgia,serif;
 }
 
@@ -30,7 +30,7 @@ input[type="text"], input[type="email"], button {
 }
 
 .login-page, .signup-page {
-    background-color: #83020b;
+    background-color: #C7EFCF;
     width: 500px;
     margin-top:200px;
     padding: 20px 20px 50px 20px;
@@ -44,19 +44,22 @@ input[type="text"], input[type="email"], button {
 
 /* Add a black background color to the top navigation */
 .topnav {
-    background-color: #1e0000;
     overflow: hidden;
+    position: relative;
+    background-color: #EEF5DB;
 
 }
 
 /* Style the links inside the navigation bar */
 .topnav a {
     float: left;
-    color: #f2f2f2;
+    color: black;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
     font-size: 17px;
+    display: inline-block;
+    list-style-type: none;
 }
 
 /* Change the color of links on hover */
@@ -67,8 +70,8 @@ input[type="text"], input[type="email"], button {
 
 /* Add a color to the active/current link */
 .topnav a.active {
-    background-color: #83020b;
-    color: white;
+    background-color: #C7EFCF;
+    color: black;
 }
 
 .rice {
@@ -78,3 +81,4 @@ input[type="text"], input[type="email"], button {
 .add-cart {
     margin-bottom: 50px;
 }
+
