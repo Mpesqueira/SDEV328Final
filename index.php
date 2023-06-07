@@ -13,47 +13,40 @@ error_reporting(E_ALL);
 // Require the autoload file
 require_once('vendor/autoload.php');
 
+
+$dataLayer = new DataLayer();
+$login = new LoginValidation();
 // create an F3 (Fat-Free Framework) object
 $F3 = Base::instance();
+$con = new Controller($F3);
 
 // Define a default route
 $F3->route('GET /', function () {
-
-    // Display a view page
-    $view = new Template();
-    echo $view->render('views/home.html');
+    $GLOBALS['con']->home();
 });
 
 // Define a contact us route
 $F3->route('GET /contact-us', function () {
-
-    // Display a view page
-    $view = new Template();
-   echo $view->render('views/contact.html');
+    $GLOBALS['con']->contact();
 });
 
 // Define a rice menu route
 $F3->route('GET|POST /rice', function ($f3) {
+    $GLOBALS['con']->rice();
+});
 
-    // Display a view page
-    $view = new Template();
-    echo $view->render('views/tmp-menu.html');
+$F3->route('GET /cart', function () {
+    $GLOBALS['con']->cart();
 });
 
 // Define a login route
-$F3->route('GET /login', function () {
-
-    // Display a view page
-    $view = new Template();
-    echo $view->render('views/login.html');
+$F3->route('GET|POST /login', function () {
+    $GLOBALS['con']->login();
 });
 
 // Define a signup route
-$F3->route('GET /signup', function () {
-
-    // Display a view page
-    $view = new Template();
-    echo $view->render('views/signup.html');
+$F3->route('GET|POST /signup', function () {
+    $GLOBALS['con']->signup();
 });
 
 // Run Fat-Free

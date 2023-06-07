@@ -63,7 +63,7 @@ $F3->route('GET|POST /rice', function ($f3) {
 
     // Display a view page
     $view = new Template();
-    echo $view->render('views/tmp-menu.html');
+    echo $view->render('views/rice.html');
 });
 
 // Define a login route
