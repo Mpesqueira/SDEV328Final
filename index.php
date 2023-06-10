@@ -35,6 +35,7 @@ $F3->route('GET|POST /rice', function ($f3) {
     $GLOBALS['con']->rice();
 });
 
+// Define a cart route
 $F3->route('GET /cart', function () {
     $GLOBALS['con']->cart();
 });

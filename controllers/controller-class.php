@@ -4,11 +4,18 @@ class Controller
 {
     private $_f3;
 
+    /**
+     * Construct function takes in a Fat-Free object
+     * @param $f3
+     */
     function __construct($f3)
     {
         $this->_f3 = $f3;
     }
 
+    /**
+     * Home function that diplays the home or "about us" page.
+     */
     function home()
     {
         // Display a view page
@@ -17,6 +24,9 @@ class Controller
 
     }
 
+    /**
+     * Contact function that displays the "contact us" page
+     */
     function contact()
     {
         // Display a view page
@@ -24,6 +34,9 @@ class Controller
         echo $view->render('views/contact.html');
     }
 
+    /**
+     * Rice function that displays the "Our Rice" page
+     */
     function rice()
     {
         // Display a view page
@@ -31,12 +44,21 @@ class Controller
         echo $view->render('views/rice.html');
     }
 
+    /**
+     * Cart function that displays the "Cart" page
+     */
     function cart()
     {
         $view = new Template();
         echo $view->render('views/cart.html');
     }
 
+    /**
+     * Login function that checks to see if a username and password match
+     * what is in the database, and if so, it displays the page as a
+     * "Logged In" user.
+     * @return void
+     */
     function login()
     {
         //Check for valid username and password
@@ -67,6 +89,12 @@ class Controller
         echo $view->render('views/login.html');
     }
 
+    /**
+     * Signup function takes a username, email, and password. Validates
+     * each of those inputs, checks them against the database, and finally
+     * displays a "Sign up" page
+     * @return void
+     */
     function signup()
     {
         $username = "";
