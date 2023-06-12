@@ -24,6 +24,12 @@
     </check>
     <input type="password" placeholder="Password" name="password" id="password">
     <br>
+    <check if="{{ isset(@errors['confirm']) }}">
+      <span class="err">{{ @errors['confirm'] }}</span>
+      <br>
+    </check>
+    <input type="password" placeholder="Confirm Password" name="confirm" id="confirm">
+    <br>
     <button type="submit">Create Account</button>
   </form>
   <br><br>

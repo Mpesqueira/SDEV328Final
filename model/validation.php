@@ -19,10 +19,21 @@ class Validate
      * @param $password
      * @return bool
      */
-     static function validPassword($password)
+    static function validPassword($password)
     {
         $number = preg_match('@[0-9]@', $password);
         return (strlen($password) >= 8 && $number);
+
+    }
+
+    /**
+     * Confirms the password given on the login/signup page
+     * @param $password
+     * @return bool
+     */
+    static function confirmPassword($password, $other)
+    {
+        return $password == $other;
 
     }
 

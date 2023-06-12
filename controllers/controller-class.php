@@ -105,6 +105,7 @@ class Controller
         $username = "";
         $email = "";
         $password = "";
+        $confirm = "";
 
         if($_SERVER['REQUEST_METHOD'] == 'POST') {
             if(isset($_POST['username'])) {
@@ -115,6 +116,9 @@ class Controller
             }
             if(isset($_POST['password'])) {
                 $password = $_POST['password'];
+            }
+            if(isset($_POST['confirm'])) {
+                $confirm = $_POST['confirm'];
             }
 
             $newUser = new User();
@@ -136,6 +140,9 @@ class Controller
             }
             else {
                 $this->_f3->set('errors["password"]', 'Password must be at least 8 characters long and contain a number');
+            }
+            if(!Validate::confirmPassword($password, $confirm)) {
+                $this->_f3->set('errors["confirm"]', 'Passwords don\'t match');
             }
 
 
