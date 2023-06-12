@@ -39,14 +39,10 @@ class Controller
      */
     function rice()
     {
-        if(empty('SESSION.userID')) {
-            $view = new Template();
-            echo $view->render('views/login.html');
-        }
-
         // Display a view page
         $view = new Template();
         echo $view->render('views/rice.html');
+
     }
 
     /**
@@ -83,9 +79,8 @@ class Controller
             $userID = $GLOBALS['login']->validUser($username, $password);
 
             if($userID != -1) {
-                echo $userID;
                 $this->_f3->set('SESSION.userID', $userID);
-                $this->_f3->reroute('/');
+                $this->_f3->reroute('login');
             }
         }
 
@@ -149,6 +144,7 @@ class Controller
             if (empty($this->_f3->get('errors'))) {
                 $this->_f3->set('SESSION.user', $newUser);
                 $GLOBALS['dataLayer']->saveUser($this->_f3->get('SESSION.user'));
+                $this->_f3->clear('SESSION');
                 $this->_f3->reroute('login');
             }
         }
@@ -160,7 +156,7 @@ class Controller
 
     function logout()
     {
-        session_destroy();
+        $this->_f3->clear('SESSION');
         $view = new Template();
         echo $view->render('views/home.html');
 

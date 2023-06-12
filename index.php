@@ -50,5 +50,10 @@ $F3->route('GET|POST /signup', function () {
     $GLOBALS['con']->signup();
 });
 
+// Define a logout route
+$F3->route('GET /logout', function () {
+   $GLOBALS['con']->logout();
+});
+
 // Run Fat-Free
 $F3->run();

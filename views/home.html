@@ -8,15 +8,24 @@
             <a class="nav" href="contact-us">Contact Us</a>
         </div>
         <div class="col">
-            <a class="nav" href="rice">Our Rice</a>
+            <check if="{{ !isset(@SESSION.userID) }}">
+                <a class="nav" href="login">Our Rice</a>
+            </check>
+            <check if="{{ isset(@SESSION.userID) }}">
+                <a class="nav" href="rice">Our Rice</a>
+            </check>
         </div>
         <div class="col">
-            <a class="nav" href="login">Login to Your Account</a>
+            <check if="{{ !isset(@SESSION.userID) }}">
+                <a class="nav" href="login">Login to Your Account</a>
+            </check>
+            <check if="{{ isset(@SESSION.userID) }}">
+                <a class="nav" href="logout">Logout</a>
+            </check>
         </div>
         <br><br>
     </div>
 </div>
-
     <h1>Welcome to Our Rice Distribution Company</h1>
     <div class="container">
         <div class="row">
