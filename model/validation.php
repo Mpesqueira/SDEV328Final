@@ -21,7 +21,9 @@ class Validate
      */
      static function validPassword($password)
     {
-        return true;
+        $number = preg_match('@[0-9]@', $password);
+        return (strlen($password) >= 8 && $number);
+
     }
 
     /**
@@ -31,6 +33,7 @@ class Validate
     static function validEmail($email)
     {
         return filter_var($email, FILTER_VALIDATE_EMAIL);
+
     }
 
     /**

@@ -7,15 +7,24 @@
 
   <form action="#" method="post">
     <check if="{{ isset(@errors['username']) }}">
-      <span class="err">{{ @errors['username'] }}</span><br>
+      <span class="err">{{ @errors['username'] }}</span>
+      <br>
     </check>
     <input type="text" placeholder="Username" name="username" id="username">
     <br>
+    <check if="{{ isset(@errors['email']) }}">
+      <span class="err">{{ @errors['email'] }}</span>
+      <br>
+    </check>
     <input type="email" placeholder="Email" id="email" name="email" >
     <br>
+    <check if="{{ isset(@errors['password']) }}">
+      <span class="err">{{ @errors['password'] }}</span>
+      <br>
+    </check>
     <input type="password" placeholder="Password" name="password" id="password">
     <br>
-    <button>Login</button>
+    <button type="submit">Create Account</button>
   </form>
   <br><br>
 </div>

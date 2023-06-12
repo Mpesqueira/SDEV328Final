@@ -38,6 +38,11 @@ input[type="text"], input[type="email"], input[type="password"], button {
     font-size: 16px;
 }
 
+input[type="number"] {
+    width: 15%;
+    text-align: right;
+}
+
 .login-page, .signup-page {
     background-color: #C7EFCF;
     width: 500px;

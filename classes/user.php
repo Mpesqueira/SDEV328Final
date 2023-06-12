@@ -28,7 +28,7 @@ class User
      * Set username for user
      * @param String $username
      */
-    public function setUsername (String $username)
+    public function setUsername ($username)
     {
         $this->_username = $username;
     }
@@ -46,7 +46,7 @@ class User
      * Set email for user
      * @param String $email
      */
-    public function setEmail (String $email)
+    public function setEmail ($email)
     {
         $this->_email = $email;
     }
@@ -64,7 +64,7 @@ class User
      * Set password for user
      * @param String $password
      */
-    public function setPassword (String $password)
+    public function setPassword ($password)
     {
         $this->_password = $password;
     }

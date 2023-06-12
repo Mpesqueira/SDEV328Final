@@ -39,6 +39,11 @@ class Controller
      */
     function rice()
     {
+        if(empty('SESSION.userID')) {
+            $view = new Template();
+            echo $view->render('views/login.html');
+        }
+
         // Display a view page
         $view = new Template();
         echo $view->render('views/rice.html');
@@ -130,11 +135,13 @@ class Controller
                 $newUser->setPassword($password);
             }
             else {
-                $this->_f3->set('errors["password"]', 'Invalid Password');
+                $this->_f3->set('errors["password"]', 'Password must be at least 8 characters long and contain a number');
             }
 
+
             if (empty($this->_f3->get('errors'))) {
-                $GLOBALS['dataLayer']->saveUser($this->_f3->get($newUser));
+                $this->_f3->set('SESSION.user', $newUser);
+                $GLOBALS['dataLayer']->saveUser($this->_f3->get('SESSION.user'));
                 $this->_f3->reroute('login');
             }
         }
@@ -142,5 +149,13 @@ class Controller
         // Display a view page
         $view = new Template();
         echo $view->render('views/signup.html');
+    }
+
+    function logout()
+    {
+        session_destroy();
+        $view = new Template();
+        echo $view->render('views/home.html');
+
     }
 }
