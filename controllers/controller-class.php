@@ -165,6 +165,5 @@ class Controller
         $this->_f3->clear('SESSION');
         $view = new Template();
         echo $view->render('views/home.html');
-
     }
 }

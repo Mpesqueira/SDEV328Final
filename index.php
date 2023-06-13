@@ -55,5 +55,9 @@ $F3->route('GET /logout', function () {
    $GLOBALS['con']->logout();
 });
 
+$F3->route('GET /cart', function () {
+    $GLOBALS['con']->cart();
+});
+
 // Run Fat-Free
 $F3->run();
