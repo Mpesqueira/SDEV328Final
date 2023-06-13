@@ -28,6 +28,10 @@
   <div class="login-box">
     <div class="box">
       <form action="#" method="POST">
+        <check if="{{ isset(@errors['user']) }}">
+          <span class="err">{{ @errors['user'] }}</span>
+          <br>
+        </check>
         <input type="text" placeholder="Username" name="username" id="username">
         <input type="password" placeholder="Password" name="password" id="password">
         <button type="submit">LOG IN</button>

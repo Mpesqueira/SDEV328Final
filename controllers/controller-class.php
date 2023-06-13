@@ -80,7 +80,13 @@ class Controller
 
             if($userID != -1) {
                 $this->_f3->set('SESSION.userID', $userID);
-                $this->_f3->reroute('login');
+            }
+            else {
+                $this->_f3->set('errors["user"]', 'Invalid Username or Password');
+            }
+
+            if (empty($this->_f3->get('errors'))) {
+                $this->_f3->reroute('/');
             }
         }
 
