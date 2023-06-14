@@ -50,10 +50,54 @@ class DataLayer
 
     }
 
-//    function getUser() {
-//        $sql = ""
-//    }
+    function saveOrder($order, $user)
+    {
+        // 1. Define the query (test first!)
+        $sql = "INSERT INTO `order` (arborio, black, basmati, brown, jasmine, sticky, white, user_id) 
+                VALUES (:arborio, :black, :basmati, :brown, :jasmine, :sticky, :white, :user)";
 
+        // 2. Prepare the statement
+        $statement = $this->_dbh->prepare($sql);
+
+        // 3. Bind the parameters
+        $arborio = $order->getArborio();
+        $black = $order->getBlack();
+        $basmati = $order->getBasmati();
+        $brown = $order->getBrown();
+        $jasmine = $order->getJasmine();
+        $sticky = $order->getSticky();
+        $white = $order->getWhite();
+
+        $statement->bindParam(':arborio', $arborio);
+        $statement->bindParam(':black', $black);
+        $statement->bindParam(':basmati', $basmati);
+        $statement->bindParam(':brown', $brown);
+        $statement->bindParam(':jasmine', $jasmine);
+        $statement->bindParam(':sticky', $sticky);
+        $statement->bindParam(':white', $white);
+        $statement->bindParam(':user', $user);
+
+
+        // 4. Execute
+        $statement->execute();
+
+        // 5. Process the result, if there is one
+
+    }
+
+    function getOrder ($user)
+    {
+        $sql = "SELECT arborio, black, basmati, brown, jasmine, sticky, white FROM `order`;";
+
+        $statement = $this->_dbh->prepare($sql);
+
+        //$statement->bindParam(':user', $user);
+
+        $statement->execute();
+
+        $result = $statement->fetchAll(PDO::FETCH_ASSOC);
+        return $result;
+    }
 
     /**
      * getRice function used to get the various

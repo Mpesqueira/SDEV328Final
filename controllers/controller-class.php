@@ -39,6 +39,37 @@ class Controller
      */
     function rice()
     {
+        $arborio = 0;
+        $basmati = 0;
+        $black = 0;
+        $brown = 0;
+        $jasmine = 0;
+        $sticky = 0;
+        $white = 0;
+
+        if($_SERVER['REQUEST_METHOD'] == 'POST') {
+            $arborio = ((int)($_POST['arborio']));
+            $basmati = ((int)($_POST['basmati']));
+            $black = ((int)($_POST['black']));
+            $brown = ((int)($_POST['brown']));
+            $jasmine = ((int)($_POST['jasmine']));
+            $sticky = ((int)($_POST['sticky']));
+            $white = ((int)($_POST['white']));
+
+            $newOrder = new Order();
+
+            $newOrder->setArborio($arborio);
+            $newOrder->setBasmati($basmati);
+            $newOrder->setBlack($black);
+            $newOrder->setBrown($brown);
+            $newOrder->setJasmine($jasmine);
+            $newOrder->setSticky($sticky);
+            $newOrder->setWhite($white);
+
+            $this->_f3->set('SESSION.order', $newOrder);
+            $this->_f3->reroute('cart');
+        }
+
         // Display a view page
         $view = new Template();
         echo $view->render('views/rice.html');
@@ -50,6 +81,10 @@ class Controller
      */
     function cart()
     {
+        $GLOBALS['dataLayer']->saveOrder($this->_f3->get('SESSION.order'), $this->_f3->get('SESSION.userID'));
+
+        $orders = $GLOBALS['dataLayer']->getOrder($this->_f3->get('SESSION.userID'));
+
         $view = new Template();
         echo $view->render('views/cart.html');
     }
