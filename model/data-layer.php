@@ -87,11 +87,11 @@ class DataLayer
 
     function getOrder ($user)
     {
-        $sql = "SELECT arborio, black, basmati, brown, jasmine, sticky, white FROM `order`;";
+        $sql = "SELECT arborio, black, basmati, brown, jasmine, sticky, white FROM `order` WHERE user_id = :user;";
 
         $statement = $this->_dbh->prepare($sql);
 
-        //$statement->bindParam(':user', $user);
+        $statement->bindParam(':user', $user);
 
         $statement->execute();
 

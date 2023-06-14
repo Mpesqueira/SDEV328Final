@@ -67,6 +67,7 @@ class Controller
             $newOrder->setWhite($white);
 
             $this->_f3->set('SESSION.order', $newOrder);
+            $GLOBALS['dataLayer']->saveOrder($this->_f3->get('SESSION.order'), $this->_f3->get('SESSION.userID'));
             $this->_f3->reroute('cart');
         }
 
@@ -81,9 +82,8 @@ class Controller
      */
     function cart()
     {
-        $GLOBALS['dataLayer']->saveOrder($this->_f3->get('SESSION.order'), $this->_f3->get('SESSION.userID'));
-
-        $orders = $GLOBALS['dataLayer']->getOrder($this->_f3->get('SESSION.userID'));
+        $order = $GLOBALS['dataLayer']->getOrder($this->_f3->get('SESSION.userID'));
+        $this->_f3->set('order', $order);
 
         $view = new Template();
         echo $view->render('views/cart.html');

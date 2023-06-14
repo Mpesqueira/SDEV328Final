@@ -3,15 +3,37 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-md-6">
+    <div class="col">
       <h2 class="text-center">Cart</h2>
     </div>
   </div>
   <div clas="row">
     <div class="col">
-      <check>
-
-      </check>
+      <table>
+        <thead>
+        <tr>
+          <th>Arborio</th>
+          <th>Black</th>
+          <th>Basmati</th>
+          <th>Brown</th>
+          <th>Jasmine</th>
+          <th>Sticky</th>
+          <th>White</th>
+        </tr>
+        </thead>
+        <tbody>
+        <repeat group="{{ @order }}" value="{{ @values }}">
+          <tr>
+            <td>{{ @values.arborio }}</td>
+            <td>{{ @values.black }}</td>
+            <td>{{ @values.basmati }}</td>
+            <td>{{ @values.brown }}</td>
+            <td>{{ @values.jasmine }}</td>
+            <td>{{ @values.white }}</td>
+          </tr>
+        </repeat>
+      </tbody>
+      </table>
     </div>
   </div>
 </div>
