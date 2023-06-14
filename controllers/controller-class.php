@@ -83,10 +83,21 @@ class Controller
     function cart()
     {
         $order = $GLOBALS['dataLayer']->getOrder($this->_f3->get('SESSION.userID'));
-        $this->_f3->set('order', $order);
+        $this->_f3->set('orders', $order);
 
         $view = new Template();
         echo $view->render('views/cart.html');
+    }
+
+    /**
+     * Checkout removes the order from the database
+     */
+    function checkout()
+    {
+        $checkout = $GLOBALS['dataLayer']->endOrder ($this->_f3->get('SESSION.userID'));
+
+        $view = new Template();
+        echo $view->render('views/home.html');
     }
 
     /**

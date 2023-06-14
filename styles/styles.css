@@ -103,3 +103,10 @@ input[type="number"] {
 .err {
     color: darkred;
 }
+
+table {
+    margin: 0 auto;
+}
+
+
+

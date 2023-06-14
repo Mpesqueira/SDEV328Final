@@ -3,37 +3,38 @@
 
 <div class="container">
   <div class="row">
-    <div class="col">
+    <div class="col-8">
       <h2 class="text-center">Cart</h2>
+      <repeat group="{{ @orders }}" value="{{ @order }}">
+        <div>
+          <hr>
+          <img src="images/arborio.jpg" id="cart-img" alt="A picture of Arborio rice">
+          <h4>Arborio</h4>
+          <p>Quantity: {{ @order.arborio }}</p>
+        </div>
+        <hr>
+        <h4>Black</h4>
+        <p>Quantity: {{ @order.black }}</p>
+        <hr>
+        <h4>Basmati</h4>
+        <p>Quantity: {{ @order.basmati }}</p>
+        <hr>
+        <h4>Brown</h4>
+        <p>Quantity: {{ @order.brown }}</p>
+        <hr>
+        <h4>Jasmine</h4>
+        <p>Quantity: {{ @order.jasmine }}</p>
+        <hr>
+        <h4>Sticky</h4>
+        <p>Quantity: {{ @order.sticky }}</p>
+        <hr>
+        <h4>White</h4>
+        <p>Quantity: {{ @order.white }}</p>
+      </repeat>
+
     </div>
-  </div>
-  <div clas="row">
     <div class="col">
-      <table>
-        <thead>
-        <tr>
-          <th>Arborio</th>
-          <th>Black</th>
-          <th>Basmati</th>
-          <th>Brown</th>
-          <th>Jasmine</th>
-          <th>Sticky</th>
-          <th>White</th>
-        </tr>
-        </thead>
-        <tbody>
-        <repeat group="{{ @order }}" value="{{ @values }}">
-          <tr>
-            <td>{{ @values.arborio }}</td>
-            <td>{{ @values.black }}</td>
-            <td>{{ @values.basmati }}</td>
-            <td>{{ @values.brown }}</td>
-            <td>{{ @values.jasmine }}</td>
-            <td>{{ @values.white }}</td>
-          </tr>
-        </repeat>
-      </tbody>
-      </table>
+      <button onclick="window.location.href='checkout'">Checkout</button>
     </div>
   </div>
 </div>

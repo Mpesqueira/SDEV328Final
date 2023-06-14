@@ -99,6 +99,17 @@ class DataLayer
         return $result;
     }
 
+    function endOrder ($user)
+    {
+        $sql = "DELETE FROM `order` WHERE user_id = :user";
+
+        $statement = $this->_dbh->prepare($sql);
+
+        $statement->bindParam(':user', $user);
+
+        $statement->execute();
+    }
+
     /**
      * getRice function used to get the various
      * type of rice stored in the $rice array
