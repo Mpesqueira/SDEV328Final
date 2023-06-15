@@ -55,12 +55,16 @@ $F3->route('GET /logout', function () {
    $GLOBALS['con']->logout();
 });
 
-$F3->route('GET /cart', function () {
+$F3->route('GET|POST /cart', function () {
     $GLOBALS['con']->cart();
 });
 
 $F3->route('GET /checkout', function () {
    $GLOBALS['con']->checkout();
+});
+
+$F3->route('GET /admin', function () {
+   $GLOBALS['con']->admin();
 });
 
 // Run Fat-Free

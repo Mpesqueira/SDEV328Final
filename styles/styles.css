@@ -28,7 +28,7 @@ ul {
     text-align: center;
 }
 
-input[type="text"], input[type="email"], input[type="password"], button {
+input[type="text"], input[type="email"], input[type="password"], button, select {
     margin-top: 10px;
     margin-bottom: 10px;
     border-radius: 10px;

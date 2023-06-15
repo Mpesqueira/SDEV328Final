@@ -85,6 +85,10 @@ class Controller
         $order = $GLOBALS['dataLayer']->getOrder($this->_f3->get('SESSION.userID'));
         $this->_f3->set('orders', $order);
 
+        if($_SERVER['REQUEST_METHOD'] == 'POST') {
+            $this->_f3->reroute('checkout');
+        }
+
         $view = new Template();
         echo $view->render('views/cart.html');
     }
@@ -206,10 +210,19 @@ class Controller
         echo $view->render('views/signup.html');
     }
 
+    /**
+     * Logs the user out and returns to home page
+     * @return void
+     */
     function logout()
     {
         $this->_f3->clear('SESSION');
         $view = new Template();
         echo $view->render('views/home.html');
+    }
+
+    function admin()
+    {
+
     }
 }
