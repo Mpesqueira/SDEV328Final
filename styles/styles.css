@@ -108,5 +108,9 @@ table {
     margin: 0 auto;
 }
 
-
+.cart-img {
+    width: 15%;
+    height: auto;
+    float: right;
+}
 

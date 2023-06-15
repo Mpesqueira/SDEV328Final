@@ -4,32 +4,57 @@
 <div class="container">
   <div class="row">
     <div class="col-8">
-      <h2 class="text-center">Cart</h2>
+      <h1 class="text-center">Cart</h1>
       <repeat group="{{ @orders }}" value="{{ @order }}">
+        <hr>
         <div>
-          <hr>
-          <img src="images/arborio.jpg" id="cart-img" alt="A picture of Arborio rice">
-          <h4>Arborio</h4>
-          <p>Quantity: {{ @order.arborio }}</p>
+          <img src="images/arborio.jpg" class="cart-img" alt="A picture of Arborio rice">
+          <h4 class="cart-area">Arborio</h4>
+          <p class="cart-area">Quantity: {{ @order.arborio }}</p>
+          <br>
         </div>
         <hr>
-        <h4>Black</h4>
-        <p>Quantity: {{ @order.black }}</p>
+        <div>
+          <img src="images/black.jpg" class="cart-img" alt="A picture of Black rice">
+          <h4>Black</h4>
+          <p>Quantity: {{ @order.black }}</p>
+          <br>
+        </div>
         <hr>
-        <h4>Basmati</h4>
-        <p>Quantity: {{ @order.basmati }}</p>
+        <div>
+          <img src="images/basmati.jpg" class="cart-img" alt="A picture of Basmati rice">
+          <h4>Basmati</h4>
+          <p>Quantity: {{ @order.basmati }}</p>
+          <br>
+        </div>
         <hr>
-        <h4>Brown</h4>
-        <p>Quantity: {{ @order.brown }}</p>
+        <div>
+          <img src="images/brown.jpg" class="cart-img" alt="A picture of Brown rice">
+          <h4>Brown</h4>
+          <p>Quantity: {{ @order.brown }}</p>
+          <br>
+        </div>
         <hr>
-        <h4>Jasmine</h4>
-        <p>Quantity: {{ @order.jasmine }}</p>
+        <div>
+          <img src="images/jasmine.jpg" class="cart-img" alt="A picture of Jasmine rice">
+          <h4>Jasmine</h4>
+          <p>Quantity: {{ @order.jasmine }}</p>
+          <br>
+        </div>
         <hr>
-        <h4>Sticky</h4>
-        <p>Quantity: {{ @order.sticky }}</p>
+        <div>
+          <img src="images/sticky.jpg" class="cart-img" alt="A picture of Sticky rice">
+          <h4>Sticky</h4>
+          <p>Quantity: {{ @order.sticky }}</p>
+          <br>
+        </div>
         <hr>
-        <h4>White</h4>
-        <p>Quantity: {{ @order.white }}</p>
+        <div>
+          <img src="images/white.jpg" class="cart-img" alt="A picture of White rice">
+          <h4>White</h4>
+          <p>Quantity: {{ @order.white }}</p>
+          <br>
+        </div>
       </repeat>
 
     </div>
